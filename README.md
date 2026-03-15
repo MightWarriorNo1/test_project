@@ -10,6 +10,7 @@ Production-ready Non-Technical Loss (NTL) detection for power distribution grids
 - **GNN anomaly detection**: Per-meter anomaly scores with XAI reason codes (Integrated Gradients)
 - **Data simulator**: Physically consistent power flow data with synthetic fraud labels
 - **Docker Compose**: Kafka, TimescaleDB, Redis, FastAPI, Celery worker
+- **React UI** (optional): dashboard in `frontend/` — health, inference form, results; deployable on Vercel
 
 ## Quick start
 
@@ -44,6 +45,7 @@ docker compose up -d
 - `src/api/` — FastAPI inference API
 - `src/workers/` — Async inference worker (Celery)
 - `scripts/simulate_grid_data.py` — Data simulator
+- `frontend/` — React (Vite) UI; see `frontend/README.md` for run and Vercel deploy
 
 ## Units
 

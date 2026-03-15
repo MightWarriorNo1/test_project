@@ -6,6 +6,7 @@ dist/
 *.manifest
 .pytest_cache/
 .mypy_cache/
+frontend/node_modules/
 *.pyc
 __pycache__/
 .env

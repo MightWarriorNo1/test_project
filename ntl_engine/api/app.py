@@ -3,6 +3,7 @@
 from typing import Any, Dict, List, Optional
 
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from ntl_engine.config.settings import get_settings
@@ -36,6 +37,13 @@ class InferenceResponse(BaseModel):
 
 def create_app() -> FastAPI:
     app = FastAPI(title="NTL Detection Inference API", version="0.1.0")
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
     _inference_results: Dict[str, Dict[str, Any]] = {}
 
     @app.post("/inference", response_model=InferenceResponse)
