@@ -1,0 +1,13 @@
+# Build / install
+*.egg-info/
+*.egg
+build/
+dist/
+*.manifest
+.pytest_cache/
+.mypy_cache/
+*.pyc
+__pycache__/
+.env
+.venv/
+venv/
